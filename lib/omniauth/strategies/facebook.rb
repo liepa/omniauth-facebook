@@ -14,7 +14,8 @@ module OmniAuth
       option :client_options, {
         site: 'https://graph.facebook.com/v2.6',
         authorize_url: "https://www.facebook.com/v2.6/dialog/oauth",
-        token_url: 'oauth/access_token'
+        token_url: 'oauth/access_token',
+        proxy: ENV['http_proxy'] ? URI(ENV['http_proxy']) : nil
       }
 
       option :access_token_options, {
